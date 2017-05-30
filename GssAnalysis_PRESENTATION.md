@@ -86,7 +86,7 @@ ggplot(new, aes(year, prop)) + geom_line() + geom_point() +
               x="Year", y="% People against homosexual relationships")
 ```
 
-![](GssAnalysis_files/figure-markdown_github/unnamed-chunk-2-1.png)
+![](https://github.com/SauravDeb/General-Social-Survey-GSS-Data-Analysis/blob/master/opinionShift.png)
 
 The plot above gives us a visualization of the shift in the proportion of people with negative opinions towards homosexual relationships i.e Always wrong, since 1973 untill 2012.
 
