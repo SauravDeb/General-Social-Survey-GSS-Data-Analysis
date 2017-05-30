@@ -67,6 +67,7 @@ ggplot(new, aes(year, prop)) + geom_line() + geom_point() +
         labs(title = "Shift of negative opinion towards homosexual relationships throughout the years",
               x="Year", y="% People against homosexual relationships")
 ```
+![alt text](https://github.com/SauravDeb/General-Social-Survey-GSS-Data-Analysis/blob/master/opinionShift.png)
 
 The plot above gives us a visualization of the shift in the proportion of people with negative opinions towards homosexual relationships i.e Always wrong, since 1973 untill 2012.
     
@@ -78,26 +79,32 @@ It can be clearly seen from the above plot that there was a larger proportion of
 
 This inference will provide useful insight if there is any concrete evidence that the opinion shift among the general public has changed between 2000 and 2012.
 
-###Hypothesis
+__Hypothesis__
+
 The hypothesis are as such:
 
-####_Null hypothesis_:
+_Null hypothesis_:
+
 The opinion shift has nothing to do with the passing of years from 2000 till 2012 i.e the change in opinion is independent of the passing years.
 
-####_Alternate hypothesis_:
+_Alternate hypothesis_:
+
 The opinion shift has everything to do with the passing of years from 2000 till 2012 i.e the change in opinion is dependent on the passing of years.
 
-###Condition checking:
+__Condition checking__:
 1._Independence_:
+
 Within group independence is satisfied, also independence between groups is satisfied. Each case contributes to any 1 cell in our table.
 
 2._Sample size/skew_:
+
 Each cell must have atleast 5 expected cases.
 
-###Methodology
+__Methodology__
+
 Here we're using the __Chi-Square__ test of independence as we're dealing with categorical variables with more than 2 categories. We'll be considering a significance level of 5% while testing our hypothesis.
 
-###The "TEST"
+__The "TEST"__
 
 ```{r}
 new_ht <- gss %>% filter(year == 2000 | year == 2012) %>% select(year, homosex)
@@ -114,7 +121,8 @@ table
 #Performing the Chi-Square test of independence
 chisq.test(table)
 ```
-###__Result Interpretations__
+__Result Interpretations__
+
 It can be seen from the Chi-Square test of independence that the obtained __p-value is significantly less than our significance level of 5%__.
 Hence we can interpret that if in fact the opinion shift is independent of the passing of time from 2000 untill 2012, the probability of the same being different is signifcantly less than 0.0022. 
 
